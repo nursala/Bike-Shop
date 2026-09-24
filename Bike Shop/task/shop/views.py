@@ -9,4 +9,4 @@ def bikes(request):
         "bikes": bikes
     }
 
-    return render(request, "templates/shop/bikes.html", context)
+    return render(request, "shop/bikes.html", context)
