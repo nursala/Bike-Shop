@@ -10,20 +10,31 @@ STATUS_CHOICES = [
 class Frame(models.Model):
     color = models.CharField(max_length=16)
     quantity = models.IntegerField()
+    def __str__(self):
+        return self.color
 
 
 class Seat(models.Model):
     color = models.CharField(max_length=16)
     quantity = models.IntegerField()
+    def __str__(self):
+        return self.color
+
 
 
 class Tire(models.Model):
     type = models.CharField(max_length=32)
     quantity = models.IntegerField()
+    def __str__(self):
+        return self.type
+
 
 
 class Basket(models.Model):
     quantity = models.IntegerField()
+    def __str__(self):
+        return self.quantity
+
 
 
 class Bike(models.Model):

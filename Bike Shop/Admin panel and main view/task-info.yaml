@@ -43,12 +43,16 @@ files:
     visible: true
     learner_created: false
   - name: test/__init__.py
+    visible: true
     learner_created: false
   - name: test/base.py
+    visible: true
     learner_created: false
   - name: test/tests.py
+    visible: true
     learner_created: false
   - name: tests.py
+    visible: true
     learner_created: false
   - name: db.test.sqlite3
     visible: true
@@ -60,5 +64,8 @@ files:
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/projects/266/stages/1348/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 22 Sep 2026 02:55:55 UTC"
 record: -1

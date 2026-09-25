@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ bike.name }}</title>
+</head>
+<body>
+
+<h2>{{ bike.name }}</h2>
+
+<p>frame: {{ bike.frame.color }}</p>
+<p>seat: {{ bike.seat.color }}</p>
+<p>tires: {{ bike.tire.type }}</p>
+<p>basket: {% if bike.has_basket %}yes{% else %}no{% endif %}</p>
+<p>description: {{ bike.description }}</p>
+
+{% if available %}
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Order</button>
+</form>
+
+{% else %}
+
+<p>
+    <b>Unfortunately, this bike is currently not available.</b>
+</p>
+
+{% endif %}</body>
+</html>

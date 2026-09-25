@@ -50,20 +50,15 @@ files:
     learner_created: false
   - name: tests.py
     learner_created: false
-  - name: db.test.sqlite3
-    visible: true
-    is_binary: true
-    learner_created: true
-  - name: db.sqlite3
-    visible: true
-    is_binary: true
-    learner_created: true
   - name: shop/migrations/0001_initial.py
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bike.html
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bikes.html
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/projects/266/stages/1347/implement#comment
 status: Solved
-feedback:
-  message: Congratulations!
-  time: "Tue, 22 Sep 2026 01:53:16 UTC"
 record: -1

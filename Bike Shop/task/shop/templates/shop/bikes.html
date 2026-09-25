@@ -1,5 +1,7 @@
-<ul>
-    {% for bike in bikes %}
-        <li>{{ bike.name }}</li>
-    {% endfor %}
-</ul>
+{% for bike in bikes %}
+<p>
+    <a href="{% url 'bike' bike.id %}">
+        {{ bike.name }}
+    </a>
+</p>
+{% endfor %}

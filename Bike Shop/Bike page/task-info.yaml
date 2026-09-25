@@ -43,13 +43,35 @@ files:
     visible: true
     learner_created: false
   - name: test/__init__.py
+    visible: true
     learner_created: false
   - name: test/base.py
+    visible: true
     learner_created: false
   - name: test/tests.py
+    visible: true
     learner_created: false
   - name: tests.py
+    visible: true
     learner_created: false
+  - name: db.test.sqlite3
+    visible: true
+    learner_created: true
+  - name: db.sqlite3
+    visible: true
+    learner_created: true
+  - name: shop/migrations/0001_initial.py
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bike.html
+    visible: true
+    learner_created: true
+  - name: shop/templates/shop/bikes.html
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/projects/266/stages/1349/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 25 Sep 2026 02:09:43 UTC"
 record: -1
