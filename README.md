@@ -1,30 +1,48 @@
-# Bike Shop — Django exercise
+# Bike Shop
+**Python · Django · SQLite · Server-rendered templates**
 
-A small Django project for modeling bike components and displaying a bike catalog. This repository includes the course task materials under `Bike Shop/`; the runnable app lives in `Bike Shop/task/`.
+A Django learning project that models bike components, displays a catalog, accepts customer orders, and updates component inventory.
 
-## Run
+## Features
+- Bike catalog and individual bike pages.
+- Component availability checks on the detail page.
+- Customer order form and order confirmation page.
+- Inventory models for frames, seats, tires, and baskets.
+- Django admin for managing records.
 
-From the repository root:
+## Run locally
+Use a Python environment compatible with the pinned Django version.
 
 ```bash
+git clone https://github.com/nursala/Bike-Shop.git
+cd Bike-Shop
 python -m venv .venv
-. .venv/bin/activate
+```
+
+Activate the environment: `source .venv/bin/activate` on macOS/Linux, or `.venv\Scripts\Activate.ps1` in Windows PowerShell.
+
+```bash
 pip install Django==6.0.4
 cd "Bike Shop/task"
 python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Open `http://127.0.0.1:8000/bikes/`. The database starts with no catalog entries. Add frames, seats, tires, and bikes in Django admin after creating a superuser:
+Open **http://127.0.0.1:8000/bikes/**. Use **/admin/** to add components and bikes if the catalog is empty. A bike needs one frame, one seat, and two tires; basket-equipped bikes also require a basket.
 
-```bash
-python manage.py createsuperuser
-```
+## Application map
+| URL | View |
+| --- | --- |
+| `/bikes/` | Catalog using `ListView` |
+| `/bikes/<id>/` | Bike details, availability, and order submission |
+| `/order/<id>/` | Order confirmation |
+| `/admin/` | Django administration |
 
-## Current scope
+The application lives in [Bike Shop/task](Bike%20Shop/task/). Models, forms, views, and templates are in its `shop` app. The surrounding course folders contain Hyperskill exercises and test scaffolding.
 
-The models cover component inventory, bikes, and orders. The current public view lists bikes; this is a learning exercise, not a finished checkout flow. The course task HTML and test scaffolding are retained for reference.
+## Engineering focus
+Relational modeling with foreign keys, Django's ORM and migrations, class-based views, model forms, and template rendering.
 
-## Verification
-
-`python manage.py check` passes. The `/bikes/` view was exercised through Django's test client after correcting the template path.
+## Current limitations
+This is a learning project with no payment integration. Order creation and inventory updates are not wrapped in a database transaction, and stock is not revalidated atomically on submission. Concurrent orders can therefore oversell inventory; production use would need transactional stock checks and access controls for customer order details.
